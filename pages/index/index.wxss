@@ -27,7 +27,7 @@ page{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	align-items: : center;
+	align-items: center;
 }
 
 .info .center
@@ -61,7 +61,7 @@ page{
 {
 	display: inline-flex;
 	justify-content: center;
-	align-items: : center;
+	align-items:  center;
 	flex-direction: column;
 	background-color: #bbada0;
 	border-radius: 3px;
