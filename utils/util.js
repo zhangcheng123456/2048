@@ -36,7 +36,7 @@ function scan_array(arr) {
       str = str + ' ' + arr[key];
     }
   }
-  console.log(str);
+  // console.log(str);
 }
 
 module.exports = {

@@ -1,4 +1,5 @@
 var util = require('../../utils/util.js')
+var x1,x2,y1,y2;
 Page({
   data: {
     chessboardDatas: [
@@ -12,6 +13,33 @@ Page({
     toast2Hidden: true,
     toast3Hidden: true,
   },
+  touchStart(e) {
+     x1= e.changedTouches[0].clientX,
+     y1=e.changedTouches[0].clientY
+  
+  }, 
+  touchEnd(e) {
+    x2 = e.changedTouches[0].clientX;
+    y2 = e.changedTouches[0].clientY;
+    let turn = "";
+    if (x2 - x1 > 50 && Math.abs(y2 - y1) < 50) {      //右滑
+      turn = "right";
+      this.turnRight();
+    } else if (x2 - x1 < -50 && Math.abs(y2 - y1) < 50) {   //左滑
+      turn = "left";
+      this.turnLeft();
+    } else if (y2 - y1 > 50 && Math.abs(x2 - x1) < 50) {   //下滑
+      turn = "down";
+      this.turnDown();
+    } else if (y2 - y1 < -50 && Math.abs(x2 - x1) < 50) {   //上滑
+      turn = "up";
+      this.turnUp();
+    }
+    //console.log(turn);
+  },
+ 
+
+
   getCurrentBestScore: function() {
     var best_score = this.data.best_score;
     var current_score = this.data.current_score;

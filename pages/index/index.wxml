@@ -19,9 +19,8 @@
   </View>
 </View>
 
-<!-- View.chessboard>View.row*4>View.column*4 -->
 
-<View class="chessboard" catchtouchstart="touchstart" catchtouchend="touchend">
+<View class="chessboard"   bindtouchstart='touchStart' bindtouchend="touchEnd">
   <View class="row" wx:for="{{chessboardDatas}}" wx:for-index="idx" wx:for-item="chessboardColumn">
     <View class="column" wx:for="{{chessboardColumn}}" wx:for-item="chessboardRow">{{chessboardRow>0?chessboardRow:''}}</View>
   </View>
